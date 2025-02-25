@@ -15,11 +15,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
   name: mysql-end
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - port: 3307
       targetPort: 3306
@@ -43,6 +41,7 @@ spec:
     spec:
       containers:
       - image: mysql:8
+        imagePullPolicy: IfNotPresent
         name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
