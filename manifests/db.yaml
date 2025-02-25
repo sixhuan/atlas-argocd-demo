@@ -10,19 +10,6 @@ spec:
   selector:
     app: mysql
   clusterIP: None
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: mysql-end
-spec:
-  type: NodePort
-  ports:
-    - port: 3307
-      targetPort: 3306
-      nodePort: 30666
-
 ---
 apiVersion: apps/v1
 kind: Deployment
