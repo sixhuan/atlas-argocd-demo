@@ -12,6 +12,7 @@ spec:
         id int not null auto_increment,
         name varchar(255) not null,
         name2 varchar(255) not null,
+        name3 varchar(255) not null,
         email varchar(255) unique not null,
         short_bio varchar(255) not null,
         primary key (id)
