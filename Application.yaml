@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v1alpha1
+apiVersion: applications.argoproj.io
 kind: Application
 metadata:
   name: atlas-argocd-demo
