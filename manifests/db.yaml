@@ -10,6 +10,21 @@ spec:
   selector:
     app: mysql
   clusterIP: None
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+  name: mysql-end
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 3307
+      targetPort: 3306
+      nodePort: 30666
+
 ---
 apiVersion: apps/v1
 kind: Deployment
