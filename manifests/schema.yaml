@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
   name: myapp
 spec:
-  url: mysql://root:pass@mysql:3306/example
+  url: mysql://root:pass@mysql123:3306/example123
   schema:
     sql: |
       create table users (

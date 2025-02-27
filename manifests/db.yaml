@@ -3,12 +3,12 @@ kind: Service
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-  name: mysql
+  name: mysql123
 spec:
   ports:
   - port: 3306
   selector:
-    app: mysql
+    app: mysql123
   clusterIP: None
 ---
 apiVersion: apps/v1
@@ -16,25 +16,25 @@ kind: Deployment
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
-  name: mysql
+  name: mysql123
 spec:
   selector:
     matchLabels:
-      app: mysql
+      app: mysql123
   template:
     metadata:
       labels:
-        app: mysql
+        app: mysql123
     spec:
       containers:
       - image: mysql:8
         imagePullPolicy: IfNotPresent
-        name: mysql
+        name: mysql123
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: pass
         - name: MYSQL_DATABASE
-          value: example
+          value: example123
         readinessProbe:
             tcpSocket:
               port: 3306
@@ -47,4 +47,4 @@ spec:
           periodSeconds: 15
         ports:
         - containerPort: 3306
-          name: mysql
+          name: mysql123
