@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "2"
   name: nginx
 spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
