@@ -13,16 +13,6 @@ spec:
         name varchar(255) not null,
         name123 varchar(255) not null,
         email varchar(255) unique not null,
-        email123 varchar(255) unique not null,
         short_bio varchar(255) not null,
         primary key (id)
-      ); 
-      create table users2 (
-              id int not null auto_increment,
-              name varchar(255) not null,
-              name123 varchar(255) not null,
-              email varchar(255) unique not null,
-              email123 varchar(255) unique not null,
-              short_bio varchar(255) not null,
-              primary key (id)
-            );
+      );
